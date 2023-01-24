@@ -30,10 +30,7 @@ $('#send').click(function(event){
   event.preventDefault();
   let userInput = $('#name-input').val();
   
-  $('<div>', {
-    id: 'messageItem'  
-}).appendTo('#messageContainer');
-$('messageItem').text(userInput)
+  $('<div>').attr('id', 'myId').appendTo('.messageContainer');
 
 
   set( ref(database, userInput) , {
