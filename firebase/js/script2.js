@@ -28,7 +28,7 @@
 function writeUserData() {
   
   set(ref(database, 'robin'), {
-    message: 'hello'
+    // message: 'hello'
     
   });
 }
@@ -38,7 +38,7 @@ writeUserData();
 
 onValue(ref(database, 'robin'), (snapshot) => {
     const data = snapshot.val();
-    //alert(data.message)
+    // alert(data.message)
   },{onlyOnce:  true}
   );
 
