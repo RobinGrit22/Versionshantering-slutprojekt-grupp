@@ -25,32 +25,50 @@
 
 //   import { getDatabase, ref, set } from "firebase/database";
 
-function writeUserData() {
+
+$('#send').click(function(event){
+  event.preventDefault();
+  let userInput = $('#name-input').val();
   
-  set(ref(database, 'robin'), {
-    // message: 'hello'
+  $('<div>', {
+    id: 'messageItem'  
+}).appendTo('#messageContainer');
+$('messageItem').text(userInput)
+
+
+  set( ref(database, userInput) , {
+    dateOfCretion: new Date().toString('yyyy-MM-dd hh:mm:ss'),
+    message: userInput
+});
+})
+
+// function writeUserData() {
+  
+//   set(ref(database, 'robin'), {
+//      message: 'hello',
+     
     
-  });
-}
-writeUserData();
+//   });
+// }
+// writeUserData();
 
 
 
-onValue(ref(database, 'robin'), (snapshot) => {
-    const data = snapshot.val();
-    // alert(data.message)
-  },{onlyOnce:  true}
-  );
+// onValue(ref(database, 'robin'), (snapshot) => {
+//     const data = snapshot.val();
+//     // alert(data.message)
+//   },{onlyOnce:  true}
+//   );
 
 
-  onValue(ref(database, '/'), (snapshot) => {   //root kolla alla namn i root
-    snapshot.forEach((childSnapshot) => {
-      const childKey = childSnapshot.key;
-      const childData = childSnapshot.val();
-      console.log(childKey, childData)
-    });
-  }, {
-    onlyOnce: true
-  });
+//   onValue(ref(database, '/'), (snapshot) => {   //root kolla alla namn i root
+//     snapshot.forEach((childSnapshot) => {
+//       const childKey = childSnapshot.key;
+//       const childData = childSnapshot.val();
+//       console.log(childKey, childData)
+//     });
+//   }, {
+//     onlyOnce: true
+//   });
   
 
