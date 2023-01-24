@@ -36,7 +36,8 @@ $('#send').click(function(event){
 
   set( ref(database, userInput + '-' + randomNumber) , {
     dateOfCretion: new Date().toString('yyyy-MM-dd hh:mm:ss'),
-    message: messageInput
+    message: messageInput,
+    likes: 0,
 });
 })
 
