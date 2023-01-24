@@ -38,7 +38,7 @@ writeUserData();
 
 onValue(ref(database, 'robin'), (snapshot) => {
     const data = snapshot.val();
-    alert(data.message)
+    //alert(data.message)
   },{onlyOnce:  true}
   );
 
