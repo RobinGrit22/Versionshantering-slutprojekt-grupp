@@ -29,13 +29,14 @@
 $('#send').click(function(event){
   event.preventDefault();
   let userInput = $('#name-input').val();
+  let messageInput = $('#message-input').val();
   
   $('<div>').attr('id', 'myId').appendTo('.messageContainer');
+  let randomNumber = Math.floor(1000 + Math.random() * 9000);
 
-
-  set( ref(database, userInput) , {
+  set( ref(database, userInput + '-' + randomNumber) , {
     dateOfCretion: new Date().toString('yyyy-MM-dd hh:mm:ss'),
-    message: userInput
+    message: messageInput
 });
 })
 
