@@ -55,4 +55,24 @@ let garfAnimation = anime({
   }
 
 
+// Showing characters remaining
+const messageInput = document.getElementById("message-input");
+const counter = document.getElementById("counter");
+
+counter.innerHTML = "Characters remaining: 500";
+
+messageInput.addEventListener("input", function () {
+    // Get the message length
+    let messageLength = messageInput.value.length;
+
+    // Update the counter
+    counter.innerHTML = "Characters remaining: " + (500 - messageLength);
+
+    // Check if the message length is greater than the limit
+    if (messageLength > 500) {
+        messageInput.value = messageInput.value.substring(0, 500);
+        counter.innerHTML = "Characters remaining: 0";
+    }
+});
+
 
