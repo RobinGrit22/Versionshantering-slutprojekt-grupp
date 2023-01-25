@@ -1,4 +1,5 @@
 // Hide-show messagePostContainer
+const audio = new Audio("https://www.fesliyanstudios.com/play-mp3/779");
 
 $('#messagePopUpBtn').click(() => {
     $('.messagePostContainer').removeClass('inactive');
@@ -13,6 +14,7 @@ $('#back').click( () => {
 $('#send').click ( () => {
     $('.messagePostContainer').removeClass('active');
     $('.messagePostContainer').addClass('inactive');
+    audio.play();
 })
 
 //Limitation on characters
@@ -51,3 +53,4 @@ let garfAnimation = anime({
         document.getElementById('garf').style.display = "none"
       }
   }
+
