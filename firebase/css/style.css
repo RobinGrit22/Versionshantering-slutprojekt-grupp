@@ -117,3 +117,8 @@ form {
   position: absolute;
   top: 40px; left: 40px;
 }
+
+.messageContainer {
+  background: linear-gradient(90deg, rgba(206,227,212,1) 0%, rgb(84, 169, 147) 41%, rgb(52, 116, 104) 100%);
+  padding: 1em;
+}
