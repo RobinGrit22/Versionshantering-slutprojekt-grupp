@@ -110,3 +110,9 @@ form {
 .inactive {
   display: none;
 }
+
+#garf {
+  display: none;
+  height: 150px;
+  /* object-position: 50% 100%; */
+}
