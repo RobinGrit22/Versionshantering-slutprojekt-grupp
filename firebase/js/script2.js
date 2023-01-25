@@ -31,24 +31,30 @@ $('#send').click(function(event){
   let userInput = $('#name-input').val();
   let messageInput = $('#message-input').val();
   let date = new Date().toString('yyyy-MM-dd hh:mm:ss')
-  
-  
-  $('<div>').attr('class', 'messageItem').appendTo('.messageContainer');
-  $('<h3></h3>').appendTo('.messageItem').text(userInput)
-  $('<p></p>').appendTo('.messageItem').text(messageInput)
 
-  $('<div>').attr('class', 'messageIconStyle').appendTo('.messageItem');
-  $('<button></button>').attr('class', 'likeBtn').appendTo('.messageIconStyle')
-  $('<button></button>').attr('class', 'commentBtn').appendTo('.messageIconStyle')
-  $('<p></p>').appendTo('.messageIconStyle').text(date)
+  let newMessageContainer = $('<div>').attr('class', 'newMessageContainer');
+  let messageItem = $('<div>').attr('class', 'messageItem').appendTo(newMessageContainer);
+  $('<h3></h3>').appendTo(messageItem).text(userInput)
+  $('<p></p>').appendTo(messageItem).text(messageInput)
+
+  let messageIconStyle = $('<div>').attr('class', 'messageIconStyle').appendTo(messageItem);
+  $('<button></button>').attr('class', 'likeBtn').appendTo(messageIconStyle)
+  $('<button></button>').attr('class', 'commentBtn').appendTo(messageIconStyle)
+  $('<p></p>').appendTo(messageIconStyle).text(date)
   
+  $('.messageContainer').append(newMessageContainer)
   set( ref(database, '/posts/' + userInput) , {
     dateOfCretion: date,
-
     message: messageInput,
     likes: 0,
 });
 })
+
+
+
+
+
+
 
 // function writeUserData() {
   
