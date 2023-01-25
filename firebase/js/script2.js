@@ -50,6 +50,20 @@ $('#send').click(function(event){
 });
 })
 
+//Limitation on characters
+
+const maxCharacters = 500;
+$('#message-input').on('keyup', function() {
+  // Get the current number of characters in the input
+  let characters = $(this).val().length;
+
+  // If the current number of characters exceeds the maximum
+  if (characters > maxCharacters) {
+    // Truncate the input to the maximum number of characters
+    $(this).val($(this).val().substring(0, maxCharacters));
+  }
+});
+
 
 
 
