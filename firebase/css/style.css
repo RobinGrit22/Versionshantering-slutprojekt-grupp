@@ -114,5 +114,6 @@ form {
 #garf {
   display: none;
   height: 150px;
-  /* object-position: 50% 100%; */
+  position: absolute;
+  top: 40px; left: 40px;
 }
