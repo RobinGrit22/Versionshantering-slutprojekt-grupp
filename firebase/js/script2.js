@@ -30,13 +30,21 @@ $('#send').click(function(event){
   event.preventDefault();
   let userInput = $('#name-input').val();
   let messageInput = $('#message-input').val();
+  let date = new Date().toString('yyyy-MM-dd hh:mm:ss')
+  
   
   $('<div>').attr('class', 'messageItem').appendTo('.messageContainer');
+  $('<h3></h3>').appendTo('.messageItem').text(userInput)
   $('<p></p>').appendTo('.messageItem').text(messageInput)
-  let randomNumber = Math.floor(1000 + Math.random() * 9000);
 
-  set( ref(database, '/posts/' + userInput + '-' + randomNumber) , {
-    dateOfCretion: new Date().toString('yyyy-MM-dd hh:mm:ss'),
+  $('<div>').attr('class', 'messageIconStyle').appendTo('.messageItem');
+  $('<button></button>').attr('class', 'likeBtn').appendTo('.messageIconStyle')
+  $('<button></button>').attr('class', 'commentBtn').appendTo('.messageIconStyle')
+  $('<p></p>').appendTo('.messageIconStyle').text(date)
+  
+  set( ref(database, '/posts/' + userInput) , {
+    dateOfCretion: date,
+
     message: messageInput,
     likes: 0,
 });
