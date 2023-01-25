@@ -34,22 +34,31 @@ $('#send').click(function(event){
 
   let newMessageContainer = $('<div>').attr('class', 'newMessageContainer');
   let messageItem = $('<div>').attr('class', 'messageItem').appendTo(newMessageContainer);
+  // ändra färg på varje meddelande
+  $(messageItem).css('background-color', `hsl(${_.random(0, 360)}, 100%, 90%)`);
+
   $('<h3></h3>').appendTo(messageItem).text(userInput)
   $('<p></p>').appendTo(messageItem).text(messageInput)
 
   let messageIconStyle = $('<div>').attr('class', 'messageIconStyle').appendTo(messageItem);
   $('<button></button>').attr('class', 'likeBtn').appendTo(messageIconStyle)
+  $(document).ready(function(){
+    $(".likeBtn").html('<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>');
+});
   $('<button></button>').attr('class', 'commentBtn').appendTo(messageIconStyle)
+  $(document).ready(function(){
+    $(".commentBtn").html('<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="16 3 21 8 8 21 3 21 3 16 16 3"></polygon></svg>');
+});
   $('<p></p>').appendTo(messageIconStyle).text(date)
   garfAppear()
   $('.messageContainer').append(newMessageContainer)
+
   set( ref(database, '/posts/' + userInput) , {
     dateOfCretion: date,
     message: messageInput,
     likes: 0,
 });
 })
-
 
 
 
