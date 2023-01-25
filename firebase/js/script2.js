@@ -1,7 +1,7 @@
 
   // Import the functions you need from the SDKs you need
   import { initializeApp } from "https://www.gstatic.com/firebasejs/9.16.0/firebase-app.js";
-  import { getDatabase , ref , set , onValue, remove, push} from "https://www.gstatic.com/firebasejs/9.16.0/firebase-database.js";
+  import { getDatabase , ref , set , onValue, query, orderByChild, remove, push} from "https://www.gstatic.com/firebasejs/9.16.0/firebase-database.js";
   // TODO: Add SDKs for Firebase products that you want to use
   // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -31,6 +31,7 @@ $('#send').click(function(event){
   let userInput = $('#name-input').val();
   let messageInput = $('#message-input').val();
   let date = new Date().toString('yyyy-MM-dd hh:mm:ss')
+  let dateOrder = new Date().getTime();
 
   let newMessageContainer = $('<div>').attr('class', 'newMessageContainer');
   let messageItem = $('<div>').attr('class', 'messageItem').appendTo(newMessageContainer);
@@ -58,6 +59,7 @@ $('#send').click(function(event){
     dateOfCretion: date,
     message: messageInput,
     likes: 0,
+    dateOrder: dateOrder,
 });
 })
 
@@ -85,7 +87,7 @@ $('#send').click(function(event){
 //     //  alert(data.message)
 //   },{onlyOnce:  true}
 //   );
-
+// const orderedPosts = query(ref(database, '/posts/', orderByChild("dateOrder")));
 
   onValue(ref(database, '/posts/'), (snapshot) => {   //root kolla alla namn i root
     snapshot.forEach((childSnapshot) => {
