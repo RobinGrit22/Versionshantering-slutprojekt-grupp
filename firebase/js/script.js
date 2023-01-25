@@ -14,3 +14,4 @@ $('#send').click ( () => {
     $('.messagePostContainer').removeClass('active');
     $('.messagePostContainer').addClass('inactive');
 })
+

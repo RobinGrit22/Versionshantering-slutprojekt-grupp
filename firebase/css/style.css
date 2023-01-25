@@ -9,16 +9,22 @@
 body {
   font-family: "Open Sans", sans-serif;
   width: 100vw;
-  min-height: 100vh;
+  max-height: 100vh;
   background-color: #e3e3e3;
 }
 
+#message-popup-btn-container {
+  /* border: 2px solid red; */
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 #messagePopUpBtn {
-  position: absolute;
-  left: 0;
-  bottom: 0;
   margin: 12px;
-  width: 350px;
+  width: 100%;
   height: 64px;
   border-radius: 8px;
   background-color: #eff3f6;
@@ -109,4 +115,64 @@ form {
 
 .inactive {
   display: none;
+}
+
+/* Message Container */
+
+.messageContainer {
+  /* border: 1px solid red; */
+  width: 100%;
+  height: 570px;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+}
+
+.newMessageContainer {
+  /* border: 2px solid green; */
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  justify-content: center;
+  margin-top: 8px;
+}
+
+.messageItem {
+  width: 90%;
+  height: fit-content;
+  /* border: 1px solid green; */
+  /* margin-top: 8px; */
+  background-color: #eff3f6;
+  border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  overflow-wrap: break-word;
+  padding: 8px;
+}
+
+.messageIconStyle {
+  /* border: 1px solid red; */
+  margin-top: 12px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.likeBtn {
+  /* border: 1px solid red; */
+  width: 16px;
+  aspect-ratio: 1 / 1;
+  background-color: transparent;
+}
+
+.commentBtn {
+  /* border: 1px solid red; */
+  width: 16px;
+  aspect-ratio: 1 / 1;
+  background-color: transparent;
+}
+
+.messageIconStyle p {
+  font-size: 8px;
 }
