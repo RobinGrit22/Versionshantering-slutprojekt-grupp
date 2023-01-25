@@ -141,8 +141,11 @@ onValue(ref(database, '/posts/'), (snapshot) => {
     else {
       const filteredMessages = [];
       snapshot.forEach(childSnapshot => {
-        if (childSnapshot.val().message.toLowerCase().includes(searchQuery.toLowerCase()))
-          filteredMessages.push(childSnapshot);
+        if(childSnapshot.val() && childSnapshot.val().message){
+          if(childSnapshot.val().message.toLowerCase().includes(searchQuery.toLowerCase())){
+             filteredMessages.push(childSnapshot);
+          }
+      }
       });
 
       searchResultsContainer.innerHTML = '';
