@@ -31,7 +31,8 @@ $('#send').click(function(event){
   let userInput = $('#name-input').val();
   let messageInput = $('#message-input').val();
   
-  $('<div>').attr('id', 'myId').appendTo('.messageContainer');
+  $('<div>').attr('class', 'messageItem').appendTo('.messageContainer');
+  $('<p></p>').appendTo('.messageItem').text(messageInput)
   let randomNumber = Math.floor(1000 + Math.random() * 9000);
 
   set( ref(database, userInput + '-' + randomNumber) , {
