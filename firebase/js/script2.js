@@ -35,7 +35,7 @@ $('#send').click(function(event){
   $('<p></p>').appendTo('.messageItem').text(messageInput)
   let randomNumber = Math.floor(1000 + Math.random() * 9000);
 
-  set( ref(database, userInput + '-' + randomNumber) , {
+  set( ref(database, '/posts/' + userInput + '-' + randomNumber) , {
     dateOfCretion: new Date().toString('yyyy-MM-dd hh:mm:ss'),
     message: messageInput,
     likes: 0,
