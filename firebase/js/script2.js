@@ -41,7 +41,7 @@ $('#send').click(function(event){
   $('<button></button>').attr('class', 'likeBtn').appendTo(messageIconStyle)
   $('<button></button>').attr('class', 'commentBtn').appendTo(messageIconStyle)
   $('<p></p>').appendTo(messageIconStyle).text(date)
-  
+  garfAppear()
   $('.messageContainer').append(newMessageContainer)
   set( ref(database, '/posts/' + userInput) , {
     dateOfCretion: date,
