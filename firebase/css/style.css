@@ -39,6 +39,7 @@ body {
   align-items: center;
   justify-content: center;
   color: #8f8f8f;
+  
 }
 
 #messagePopUpBtn h4 {
@@ -68,6 +69,7 @@ body {
 
 .messagePostContainer form label {
   color: rgb(129, 129, 129);
+ 
 }
 
 .messagePostContainer form #name-input {
@@ -105,12 +107,14 @@ body {
 
 .messagePostContainer #back {
   background-color: rgb(129, 129, 129);
-  border-bottom: 1px solid white;
-  border-right: 1px solid white;
+ 
   border-bottom-right-radius: 8px;
   padding: 8px;
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
     rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    background: #33CCCC; 
+  animation: color 9s infinite linear;
+ 
 }
 
 /* Hide-Show messagePostContainer */
@@ -144,6 +148,7 @@ body {
   justify-content: flex-start;
   align-items: flex-start;
   box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+  
 }
 
 .newMessageContainer {
@@ -191,3 +196,14 @@ body {
 .messageIconStyle p {
   font-size: 8px;
 }
+
+@keyframes color {
+  0%   { background: #33CCCC; }
+  20%  { background: #33CC36; }
+  40%  { background: #B8CC33; }
+  60%  { background: #FCCA00; }
+  80%  { background: #33CC36; }
+  100% { background: #33CCCC; }
+}
+
+
