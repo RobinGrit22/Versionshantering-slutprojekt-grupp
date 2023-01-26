@@ -17,6 +17,8 @@ $('#send').click ( () => {
     audio.play();
 })
 
+
+
 //Limitation on characters
 
 const maxCharacters = 500;

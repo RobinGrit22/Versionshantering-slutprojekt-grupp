@@ -53,6 +53,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  pointer-events: none;
 }
 
 .messagePostContainer {
@@ -65,6 +66,7 @@ body {
   border-radius: 8px;
   background-color: #d3d3d3;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  pointer-events: all;
 }
 
 .indexForm {
@@ -202,6 +204,7 @@ body {
   width: 16px;
   aspect-ratio: 1 / 1;
   background-color: transparent;
+  
 }
 
 .commentBtn {
