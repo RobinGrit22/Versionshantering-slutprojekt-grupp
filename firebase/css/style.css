@@ -192,7 +192,7 @@ body {
 
 .messageIconStyle form {
   /* border: 1px solid red; */
-  width: 10%;
+  width: 15%;
   display: flex;
   justify-content: space-between;
 }
@@ -247,6 +247,14 @@ body {
 @media screen and (min-width: 650px) {
   #post-container {
     height: 80%;
+  }
+
+  .messageIconStyle p {
+    font-size: 12px;
+  }
+
+  .messageIconStyle form {
+    width: 10%;
   }
 }
 
