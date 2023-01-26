@@ -14,7 +14,6 @@ body {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 85vh 15vh;
-  /* gap: 16px; */
 }
 
 #message-popup-btn-container {
@@ -22,7 +21,7 @@ body {
   width: 100%;
   height: 100%;
   grid-row: 2 / 3;
-  align-self: end;
+  align-self: center;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -31,7 +30,7 @@ body {
 #messagePopUpBtn {
   margin: 12px;
   width: 100%;
-  height: 64px;
+  height: 60%;
   border-radius: 8px;
   background-color: #eff3f6;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
@@ -39,19 +38,28 @@ body {
   align-items: center;
   justify-content: center;
   color: #8f8f8f;
-  
 }
 
 #messagePopUpBtn h4 {
   margin-left: 12px;
 }
 
-.messagePostContainer {
-  display: none;
+#post-container {
+  /* border: 1px solid green; */
+  width: 100%;
+  height: 60%;
   position: absolute;
-  bottom: 12%;
-  width: 350px;
-  height: 400px;
+  bottom: 15%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.messagePostContainer {
+  /* border: 1px solid purple; */
+  display: none;
+  width: 90%;
+  height: 100%;
   margin: 12px;
   border-radius: 8px;
   background-color: #d3d3d3;
@@ -59,8 +67,10 @@ body {
 }
 
 .indexForm {
-  width: 350px;
-  height: 350px;
+  /* border: 1px solid red; */
+  width: 100%;
+  height: 90%;
+  padding-bottom: 2%;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -69,7 +79,6 @@ body {
 
 .messagePostContainer form label {
   color: rgb(129, 129, 129);
- 
 }
 
 .messagePostContainer form #name-input {
@@ -107,14 +116,13 @@ body {
 
 .messagePostContainer #back {
   background-color: rgb(129, 129, 129);
- 
+
   border-bottom-right-radius: 8px;
   padding: 8px;
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
     rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
-    background: #33CCCC; 
+  background: #33cccc;
   animation: color 9s infinite linear;
- 
 }
 
 /* Hide-Show messagePostContainer */
@@ -131,7 +139,8 @@ body {
   display: none;
   height: 150px;
   position: absolute;
-  top: 40px; left: 40px;
+  top: 40px;
+  left: 40px;
 }
 
 /* Message Container */
@@ -147,8 +156,8 @@ body {
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
-  
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+    rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
 }
 
 .newMessageContainer {
@@ -198,12 +207,27 @@ body {
 }
 
 @keyframes color {
-  0%   { background: #33CCCC; }
-  20%  { background: #33CC36; }
-  40%  { background: #B8CC33; }
-  60%  { background: #FCCA00; }
-  80%  { background: #33CC36; }
-  100% { background: #33CCCC; }
+  0% {
+    background: #33cccc;
+  }
+  20% {
+    background: #33cc36;
+  }
+  40% {
+    background: #b8cc33;
+  }
+  60% {
+    background: #fcca00;
+  }
+  80% {
+    background: #33cc36;
+  }
+  100% {
+    background: #33cccc;
+  }
 }
 
+/* Media Queries */
 
+@media screen and (min-width: 600px) and (min-height: 100%) {
+}
