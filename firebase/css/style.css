@@ -229,5 +229,37 @@ body {
 
 /* Media Queries */
 
-@media screen and (min-width: 600px) and (min-height: 100%) {
+@media screen and (min-width: 1080px) {
+  body {
+    grid-template-columns: 20% 60% 20%;
+    grid-template-rows: 85vh 15vh;
+  }
+
+  .messageContainer {
+    grid-column: 2 / 3;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+  }
+
+  #message-popup-btn-container {
+    grid-column: 2 / 3;
+  }
+
+  #post-container {
+    grid-column: 2 / 3;
+  }
+
+  .messagePostContainer {
+    width: 50%;
+  }
+
+  .search-box {
+    grid-column: 3 / 4;
+    place-self: start center;
+    margin-top: 5%;
+  }
+
+  .messageItem {
+    width: 60%;
+  }
 }
