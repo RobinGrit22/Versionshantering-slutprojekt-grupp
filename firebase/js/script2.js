@@ -22,7 +22,7 @@
 
 
 $('#send').click(function(event){
-  event.preventDefault();
+  // event.preventDefault();
   let userInput = $('#name-input').val();
   let messageInput = $('#message-input').val();
   let date = new Date().toString('yyyy-MM-dd hh:mm:ss')
@@ -35,6 +35,7 @@ $('#send').click(function(event){
     likes: 0,
     dateOrder: dateOrder,
 });
+
 })
 
 onValue(query(ref(database, '/posts/'), orderByChild('dateOrder')), (snapshot)  => {   //root kolla alla namn i root
@@ -65,6 +66,7 @@ onValue(query(ref(database, '/posts/'), orderByChild('dateOrder')), (snapshot)  
     $('<p></p>').appendTo(messageIconStyle).text(childData.dateOfCretion)
     });
   }, {
+     onlyOnce: true 
   });
   
 //Search functions, display in a container and show the total hits of matching word
