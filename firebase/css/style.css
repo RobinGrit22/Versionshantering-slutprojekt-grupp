@@ -82,6 +82,7 @@ body {
 }
 
 .messagePostContainer form #name-input {
+  font-size: 24px;
   width: 60%;
   height: 10%;
   border-radius: 4px;
@@ -90,6 +91,7 @@ body {
 }
 
 .messagePostContainer form #message-input {
+  font-size: 20px;
   width: 60%;
   height: 30%;
   border-radius: 4px;
@@ -229,6 +231,18 @@ body {
 
 /* Media Queries */
 
+@media screen and (min-width: 650px) {
+  #post-container {
+    height: 80%;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  #post-container {
+    height: 60%;
+  }
+}
+
 @media screen and (min-width: 1080px) {
   body {
     grid-template-columns: 20% 60% 20%;
@@ -251,6 +265,10 @@ body {
 
   .messagePostContainer {
     width: 50%;
+  }
+
+  .messagePostContainer form #message-input {
+    font-size: 24px;
   }
 
   .search-box {
