@@ -6,8 +6,6 @@
   outline: 0;
 }
 
-
-
 body {
   font-family: "Open Sans", sans-serif;
   width: 100vw;
@@ -16,7 +14,6 @@ body {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 85vh 15vh;
-  /* gap: 16px; */
 }
 
 #message-popup-btn-container {
@@ -24,7 +21,7 @@ body {
   width: 100%;
   height: 100%;
   grid-row: 2 / 3;
-  align-self: end;
+  align-self: center;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -33,7 +30,7 @@ body {
 #messagePopUpBtn {
   margin: 12px;
   width: 100%;
-  height: 64px;
+  height: 60%;
   border-radius: 8px;
   background-color: #eff3f6;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
@@ -41,28 +38,39 @@ body {
   align-items: center;
   justify-content: center;
   color: #8f8f8f;
-  
 }
 
 #messagePopUpBtn h4 {
   margin-left: 12px;
 }
 
-.messagePostContainer {
-  display: none;
+#post-container {
+  /* border: 1px solid green; */
+  width: 100%;
+  height: 60%;
   position: absolute;
-  bottom: 12%;
-  width: 350px;
-  height: 400px;
+  bottom: 15%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.messagePostContainer {
+  /* border: 1px solid purple; */
+  display: none;
+  width: 90%;
+  height: 100%;
   margin: 12px;
+  padding-bottom: 4%;
   border-radius: 8px;
   background-color: #d3d3d3;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .indexForm {
-  width: 350px;
-  height: 350px;
+  /* border: 1px solid red; */
+  width: 100%;
+  height: 90%;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -71,10 +79,10 @@ body {
 
 .messagePostContainer form label {
   color: rgb(129, 129, 129);
- 
 }
 
 .messagePostContainer form #name-input {
+  font-size: 24px;
   width: 60%;
   height: 10%;
   border-radius: 4px;
@@ -83,6 +91,7 @@ body {
 }
 
 .messagePostContainer form #message-input {
+  font-size: 20px;
   width: 60%;
   height: 30%;
   border-radius: 4px;
@@ -109,14 +118,13 @@ body {
 
 .messagePostContainer #back {
   background-color: rgb(129, 129, 129);
- 
+
   border-bottom-right-radius: 8px;
   padding: 8px;
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
     rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
-    background: #33CCCC; 
+  background: #33cccc;
   animation: color 9s infinite linear;
- 
 }
 
 /* Hide-Show messagePostContainer */
@@ -133,7 +141,8 @@ body {
   display: none;
   height: 150px;
   position: absolute;
-  top: 40px; left: 40px;
+  top: 40px;
+  left: 40px;
 }
 
 /* Message Container */
@@ -149,8 +158,8 @@ body {
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
-  
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+    rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
 }
 
 .newMessageContainer {
@@ -181,6 +190,13 @@ body {
   justify-content: space-between;
 }
 
+.messageIconStyle form {
+  /* border: 1px solid red; */
+  width: 15%;
+  display: flex;
+  justify-content: space-between;
+}
+
 .likeBtn {
   /* border: 1px solid red; */
   width: 16px;
@@ -200,100 +216,89 @@ body {
 }
 
 @keyframes color {
-  0%   { background: #33CCCC; }
-  20%  { background: #33CC36; }
-  40%  { background: #B8CC33; }
-  60%  { background: #FCCA00; }
-  80%  { background: #33CC36; }
-  100% { background: #33CCCC; }
+  0% {
+    background: #33cccc;
+  }
+  20% {
+    background: #33cc36;
+  }
+  40% {
+    background: #b8cc33;
+  }
+  60% {
+    background: #fcca00;
+  }
+  80% {
+    background: #33cc36;
+  }
+  100% {
+    background: #33cccc;
+  }
 }
-
-
-/* //contect CSS */
-
-/* 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
-
-
-
-
-/* HEADER NAVBAR */
-
-
-footer {
-  width: 100%;
-  background: linear-gradient(blue, skyblue);
-  padding: 1rem;
-  margin: auto;
-  display: flex;
-  justify-content: center;
-  justify-items: center;
-  height: 5rem;
-}
-
-footer .social-icon {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 10px 0;
-  flex-wrap: wrap;
-}
-
-footer .social-icon li {
-  list-style: none;
-}
-
-footer .social-icon li a {
-  font-size: 2rem;
-  color: #f6f6f6;
-  margin: 0 0.625rem;
-  display: inline-block;
-  transition: 0, 5s;
-}
-
-footer .social-icon li a:hover {
-  transform: translateY(-0.625);
-  color: rgb(192, 12, 12);
-}
-
-.copyright {
-  display: flex;
-  text-align: center;
-  align-items: center;
-}
-
-footer p {
-  font-size: .7rem;
-  font-weight: 500;
-  line-height: 1.5rem;
-  margin: auto;
-}
-
-
-/* //NAVBAR */
-
-
-.contact-us{
-  background-color: #007AFF;
-  border-radius: 12px;
-  padding: 1rem;
-  cursor: pointer;
-  transition: .3s all;
-  border: 1px solid #007AFF;
-  margin: auto;
-  display: inline-flex;
-  align-items: center;
-} 
-
-
 
 @media (prefers-color-scheme: dark) {
   body {
     background: #333;
-    color: white;
   }
-
 }
 
+/* Media Queries */
 
+@media screen and (min-width: 650px) {
+  #post-container {
+    height: 80%;
+  }
+
+  .messageIconStyle p {
+    font-size: 12px;
+  }
+
+  .messageIconStyle form {
+    width: 10%;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  #post-container {
+    height: 60%;
+  }
+}
+
+@media screen and (min-width: 1080px) {
+  body {
+    grid-template-columns: 20% 60% 20%;
+    grid-template-rows: 85vh 15vh;
+  }
+
+  .messageContainer {
+    grid-column: 2 / 3;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+  }
+
+  #message-popup-btn-container {
+    grid-column: 2 / 3;
+  }
+
+  #post-container {
+    grid-column: 2 / 3;
+  }
+
+  .messagePostContainer {
+    width: 50%;
+  }
+
+  .messagePostContainer form #message-input {
+    font-size: 24px;
+  }
+
+  .search-box {
+    grid-column: 3 / 4;
+    place-self: start center;
+    margin-top: 5%;
+  }
+
+  .messageItem {
+    width: 60%;
+  }
+}
