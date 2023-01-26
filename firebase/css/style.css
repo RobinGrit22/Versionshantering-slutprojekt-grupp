@@ -209,17 +209,6 @@ body {
 }
 
 
-<<<<<<< Updated upstream
-
-@media (prefers-color-scheme: dark) {
-  body {
-    background: #333;
-    color: white;
-  }
-
-}
-
-=======
 /* //contect CSS */
 
 /* 
@@ -299,6 +288,12 @@ footer p {
 
 
 
->>>>>>> Stashed changes
+@media (prefers-color-scheme: dark) {
+  body {
+    background: #333;
+    color: white;
+  }
+
+}
 
 
