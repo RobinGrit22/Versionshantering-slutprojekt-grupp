@@ -209,6 +209,7 @@ body {
 }
 
 
+<<<<<<< Updated upstream
 
 @media (prefers-color-scheme: dark) {
   body {
@@ -218,5 +219,86 @@ body {
 
 }
 
+=======
+/* //contect CSS */
+
+/* 
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+
+
+
+
+/* HEADER NAVBAR */
+
+
+footer {
+  width: 100%;
+  background: linear-gradient(blue, skyblue);
+  padding: 1rem;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  height: 5rem;
+}
+
+footer .social-icon {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0;
+  flex-wrap: wrap;
+}
+
+footer .social-icon li {
+  list-style: none;
+}
+
+footer .social-icon li a {
+  font-size: 2rem;
+  color: #f6f6f6;
+  margin: 0 0.625rem;
+  display: inline-block;
+  transition: 0, 5s;
+}
+
+footer .social-icon li a:hover {
+  transform: translateY(-0.625);
+  color: rgb(192, 12, 12);
+}
+
+.copyright {
+  display: flex;
+  text-align: center;
+  align-items: center;
+}
+
+footer p {
+  font-size: .7rem;
+  font-weight: 500;
+  line-height: 1.5rem;
+  margin: auto;
+}
+
+
+/* //NAVBAR */
+
+
+.contact-us{
+  background-color: #007AFF;
+  border-radius: 12px;
+  padding: 1rem;
+  cursor: pointer;
+  transition: .3s all;
+  border: 1px solid #007AFF;
+  margin: auto;
+  display: inline-flex;
+  align-items: center;
+} 
+
+
+
+>>>>>>> Stashed changes
 
 
