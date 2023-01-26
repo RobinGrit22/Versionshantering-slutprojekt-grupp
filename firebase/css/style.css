@@ -6,6 +6,8 @@
   outline: 0;
 }
 
+
+
 body {
   font-family: "Open Sans", sans-serif;
   width: 100vw;
@@ -205,5 +207,16 @@ body {
   80%  { background: #33CC36; }
   100% { background: #33CCCC; }
 }
+
+
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background: #333;
+    color: white;
+  }
+
+}
+
 
 
