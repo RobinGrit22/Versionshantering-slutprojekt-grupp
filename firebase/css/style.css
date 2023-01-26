@@ -6,8 +6,6 @@
   outline: 0;
 }
 
-
-
 body {
   font-family: "Open Sans", sans-serif;
   width: 100vw;
@@ -231,31 +229,12 @@ body {
   }
 }
 
-/* Media Queries */
-
-@media screen and (min-width: 650px) {
-  #post-container {
-    height: 80%;
-  }
-}
-
-@media screen and (min-width: 800px) {
-  #post-container {
-    height: 60%;
-  }
-}
-
-
 /* //contect CSS */
 
 /* 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
 
-
-
-
 /* HEADER NAVBAR */
-
 
 footer {
   width: 100%;
@@ -301,36 +280,45 @@ footer .social-icon li a:hover {
 }
 
 footer p {
-  font-size: .7rem;
+  font-size: 0.7rem;
   font-weight: 500;
   line-height: 1.5rem;
   margin: auto;
 }
 
-
 /* //NAVBAR */
 
-
-.contact-us{
-  background-color: #007AFF;
+.contact-us {
+  background-color: #007aff;
   border-radius: 12px;
   padding: 1rem;
   cursor: pointer;
-  transition: .3s all;
-  border: 1px solid #007AFF;
+  transition: 0.3s all;
+  border: 1px solid #007aff;
   margin: auto;
   display: inline-flex;
   align-items: center;
-} 
-
-
+}
 
 @media (prefers-color-scheme: dark) {
   body {
     background: #333;
     color: white;
   }
+}
 
+/* Media Queries */
+
+@media screen and (min-width: 650px) {
+  #post-container {
+    height: 80%;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  #post-container {
+    height: 60%;
+  }
 }
 
 @media screen and (min-width: 1080px) {
