@@ -20,11 +20,6 @@
   const app = initializeApp(firebaseConfig);
   const database = getDatabase(app);
 
-//   console.log(database)
-
-
-//   import { getDatabase, ref, set } from "firebase/database";
-
 
 $('#send').click(function(event){
   event.preventDefault();
@@ -32,27 +27,6 @@ $('#send').click(function(event){
   let messageInput = $('#message-input').val();
   let date = new Date().toString('yyyy-MM-dd hh:mm:ss')
   let dateOrder = new Date().getTime();
-
-  let newMessageContainer = $('<div>').attr('class', 'newMessageContainer');
-  let messageItem = $('<div>').attr('class', 'messageItem').appendTo(newMessageContainer);
-  // ändra färg på varje meddelande
-  $(messageItem).css('background-color', `hsl(${_.random(0, 360)}, 100%, 90%)`);
-
-  $('<h3></h3>').appendTo(messageItem).text(userInput)
-  $('<p></p>').appendTo(messageItem).text(messageInput)
-
-  let messageIconStyle = $('<div>').attr('class', 'messageIconStyle').appendTo(messageItem);
-  let form = $('<form>').appendTo(messageIconStyle);
-  $('<button></button>').attr('class', 'likeBtn').appendTo(form)
-  $(document).ready(function(){
-    $(".likeBtn").html('<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>');
-});
-  $('<button></button>').attr('class', 'commentBtn').appendTo(form)
-  $(document).ready(function(){
-    $(".commentBtn").html('<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="16 3 21 8 8 21 3 21 3 16 16 3"></polygon></svg>');
-});
-  $('<p></p>').appendTo(messageIconStyle).text(date)
-  $('.messageContainer').prepend(newMessageContainer)
   garfAppear()
 
   set( ref(database, '/posts/' + userInput) , {
@@ -63,38 +37,11 @@ $('#send').click(function(event){
 });
 })
 
-
-
-
-
-
-
-
-// function writeUserData() {
-  
-//   set(ref(database, 'robin'), {
-//      message: 'hello',
-     
-    
-//   });
-// }
-// writeUserData();
-
-
-
-// onValue(ref(database, '/posts'), (snapshot) => {
-//     const data = snapshot.val();
-//     //  alert(data.message)
-//   },{onlyOnce:  true}
-//   );
-// const orderedPosts = query(ref(database, '/posts/', orderByChild("dateOrder")));
-
-  onValue(ref(database, '/posts/'), (snapshot) => {   //root kolla alla namn i root
+onValue(query(ref(database, '/posts/'), orderByChild('dateOrder')), (snapshot)  => {   //root kolla alla namn i root
     snapshot.forEach((childSnapshot) => {
       const childKey = childSnapshot.key;
       const childData = childSnapshot.val();
-      // console.log(childKey, childData)
-      // console.log(childData.message)
+     
 
     let newMessageContainer = $('<div>').attr('class', 'newMessageContainer');
     let messageItem = $('<div>').attr('class', 'messageItem').appendTo(newMessageContainer);
@@ -118,7 +65,6 @@ $('#send').click(function(event){
     $('<p></p>').appendTo(messageIconStyle).text(childData.dateOfCretion)
     });
   }, {
-    onlyOnce: true
   });
   
 //Search functions, display in a container and show the total hits of matching word
