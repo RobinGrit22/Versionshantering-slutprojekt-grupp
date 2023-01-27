@@ -4,6 +4,7 @@ const audio = new Audio("https://www.fesliyanstudios.com/play-mp3/779");
 $('#messagePopUpBtn').click(() => {
     $('.messagePostContainer').removeClass('inactive');
     $('.messagePostContainer').addClass('active');
+    audio.play();
 })
 
 $('#back').click( () => {
