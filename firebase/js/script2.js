@@ -1,7 +1,7 @@
 
   // Import the functions you need from the SDKs you need
   import { initializeApp } from "https://www.gstatic.com/firebasejs/9.16.0/firebase-app.js";
-  import { getDatabase , ref , set , onValue, query, orderByChild, remove, push} from "https://www.gstatic.com/firebasejs/9.16.0/firebase-database.js";
+  import { getDatabase , ref , set , onValue, query, orderByChild, remove, push,update} from "https://www.gstatic.com/firebasejs/9.16.0/firebase-database.js";
   // TODO: Add SDKs for Firebase products that you want to use
   // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -32,7 +32,7 @@ $('#send').click(function(event){
   set( ref(database, '/posts/' + userInput) , {
     dateOfCretion: date,
     message: messageInput,
-    likes: 0,
+    //likes: 0,      // dont set likes just set likes when its  
     dateOrder: dateOrder,
 });
 
@@ -43,7 +43,7 @@ onValue(query(ref(database, '/posts/'), orderByChild('dateOrder')), (snapshot)  
       const childKey = childSnapshot.key;
       const childData = childSnapshot.val();
      
-
+      let currentLikesCount=childData.likes;
     let newMessageContainer = $('<div>').attr('class', 'newMessageContainer');
     let messageItem = $('<div>').attr('class', 'messageItem').appendTo(newMessageContainer);
     // ändra färg på varje meddelande
@@ -53,10 +53,26 @@ onValue(query(ref(database, '/posts/'), orderByChild('dateOrder')), (snapshot)  
     $('<p></p>').appendTo(messageItem).text(childData.message)
     let messageIconStyle = $('<div>').attr('class', 'messageIconStyle').appendTo(messageItem);
     let form = $('<form>').appendTo(messageIconStyle);
+    let likesPara = $('<p>').attr('class', 'amountOfLikes').appendTo(form);
+    $(likesPara).html(`${currentLikesCount}`);
     $('<button></button>').attr('class', 'likeBtn').on("click", function(event) {
       event.preventDefault()
       let target = $(event.target)
-      target.css("color", "red")
+      target.name=childKey;
+      console.log( target.name,target.css("color"));
+      if(target.css("color")!="rgb(255, 0, 0)"){
+         target.css("color", "red")
+         currentLikesCount++;
+      }
+      else{ 
+        target.css("color", "black") //black is rgb(0,0,0) //transparent rgba(0,0,0,0)
+        currentLikesCount--;
+      }
+      update( ref(database, '/posts/' + childKey) ,{
+        likes: currentLikesCount,      // apply new likescount
+        });
+        console.log(childKey+" likes:",currentLikesCount);
+        $(likesPara).html(`${currentLikesCount}`);
     }).appendTo(form)
     // likeButton.addEventListener('click', togglered)
     $(document).ready(function(){
