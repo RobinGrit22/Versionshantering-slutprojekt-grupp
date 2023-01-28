@@ -201,10 +201,10 @@ body {
 
 .likeBtn {
   /* border: 1px solid red; */
-  width: 16px;
-  aspect-ratio: 1 / 1;
+  width: 2.5rem;
+   /*aspect-ratio: 1 / 1;*/
   background-color: transparent;
-  
+  display:flex;
 }
 
 .commentBtn {
