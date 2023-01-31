@@ -43,7 +43,7 @@ onValue(query(ref(database, '/posts/'), orderByChild('dateOrder')), (snapshot)  
       const childKey = childSnapshot.key;
       const childData = childSnapshot.val();
      
-      let currentLikesCount=childData.likes;
+      let currentLikesCount=childData.likes|0;
     let newMessageContainer = $('<div>').attr('class', 'newMessageContainer');
     let messageItem = $('<div>').attr('class', 'messageItem').appendTo(newMessageContainer);
     // ändra färg på varje meddelande
